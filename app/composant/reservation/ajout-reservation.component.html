@@ -1,0 +1,34 @@
+<div class="container">
+    <form role="form">
+<div id="nouvelleReservation" *ngIf="client" class="form-group">
+
+    <fieldset>
+        <legend>Ajouter une nouvelle reservation pour le client de : {{ client.nom | uppercase }}</legend>
+        <div>
+            <label>id</label>
+            <input class="form-control" [(ngModel)]="reservation.idUnique" />
+        </div>
+        <div>
+            <label>nom</label>
+            <input class="form-control" [(ngModel)]="reservation.nomresa" />
+        </div>
+        <div>
+            <label>date</label>
+            <input class="form-control" [(ngModel)]="reservation.dateresa"  />
+        </div>
+        <div>
+            <label>nbperson</label>
+            <input class="form-control" [(ngModel)]="reservation.nbperson" />
+        </div>
+        <div>
+            <label>prix</label>
+            <input class="form-control" [(ngModel)]="reservation.prix" />
+        </div>
+
+        <button (click)="ajouterNouvelleReservation()">OK ajout nouvelle reservation</button>
+
+    </fieldset>
+
+</div>
+</form>
+</div>

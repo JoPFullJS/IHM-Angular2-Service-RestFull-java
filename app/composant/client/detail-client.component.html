@@ -1,0 +1,35 @@
+<div class="container">
+<div id="detailClient" *ngIf="client">
+detail du client
+    <div class="list-group-item list-group-item-success">
+        <label>Nom du client</label>
+        <span>{{ client.nom }}</span>
+    </div>
+    <div class="list-group-item list-group-item-success">
+        <label>prenom</label>
+        <span>{{ client.prenom }}</span>
+    </div>
+    <div class="list-group-item list-group-item-success">
+        <label>adresse</label>
+        <span>{{ client.adresse }}</span>
+    </div>
+    <div class="list-group-item list-group-item-success">
+        <label>mail</label>
+        <span>{{ client.mail }}</span>
+    </div>
+    <div>
+        <ul>
+            <li *ngFor="let r of client.reservations">ref et nom de la reservation
+                <span (click)="selectionnerReservation(r)">
+                    {{ r.nomresa }} ({{ r.idUnique }})
+                </span>
+            </li>
+        </ul>
+    </div>
+
+    <detail-reservation [reservation]="reservationSelectionnee">detail de la reservation</detail-reservation>
+
+    <ajout-reservation [client]="client"></ajout-reservation>
+
+</div>
+</div>

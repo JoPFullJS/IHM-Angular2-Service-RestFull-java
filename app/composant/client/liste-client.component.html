@@ -1,0 +1,16 @@
+<div class="container">
+<div id="listeClient">
+
+liste des clients avec l'adresse et le nom
+    <ul>
+        <li class="list-group-item" *ngFor="let c of clients">
+            <span (click)="selectionnerClient(c)">
+                {{ c.adresse }} ({{ c.nom }})
+            </span>
+        </li>
+    </ul>
+
+    <detail-client [client]="clientSelectionnee"></detail-client>
+
+</div>
+</div>

@@ -1,0 +1,58 @@
+<div class="container">
+
+    <div id="listeReservation"  >
+
+        <p-dataTable
+                [(selection)]="reservationSelectionnee"
+                [value]="reservations"
+                [editable]="true">
+            <header>listes reservation</header>
+            <p-column [style]="{'width':'40px'}" selectionMode="single"></p-column>
+            <p-column field="nomresa" header="Nom"
+                      [sortable]="true">
+            </p-column>
+            <p-column field="dateresa" header="Date"
+                      [sortable]="true" [editable]="true">
+            </p-column>
+            <p-column field="nbperson" header="Nombre de personnes"
+                      [sortable]="true" [editable]="true">
+            </p-column>
+            <p-column field="prix" header="Prix"
+                      [sortable]="true" [editable]="true">
+            </p-column>
+
+
+            <footer>
+                <div class="ui-helper-clearfix" style="width:100%">
+
+
+            </div>
+            </footer>
+
+
+
+        </p-dataTable>
+
+        <button (click)="chargerReservation()">Rafraichir</button>
+        <button (click)="modifier()">Enregistrer</button>
+        <button (click)="supprimerReservation(reservationSelectionnee)">supprimer</button>
+
+        <form>
+
+            <label>nom</label>
+            <input class="form-control" type="text" [(ngModel)]="nouvelleReservation.nomresa" />
+
+            <label>date</label>
+            <input class="form-control" type="text" [(ngModel)]="nouvelleReservation.dateresa" />
+
+            <label>nbperson</label>
+            <input class="form-control" type="text" [(ngModel)]="nouvelleReservation.nbperson" />
+
+            <label>prix</label>
+            <input class="form-control" type="text" [(ngModel)]="nouvelleReservation.prix" />
+
+            <button (click)="creerNouvelleReservation()">OK</button>
+
+        </form>
+    </div>
+
